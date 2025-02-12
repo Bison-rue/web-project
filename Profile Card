@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eae7dc;
+            margin: 0;
+        }
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .profile-image {
+            background-color: #9f7262;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .profile-image img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile-details {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #5d4037;
+        }
+        .profile-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #6d4c41;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="Card pic.jpg" alt="Profile Picture" data-testid="profilePicture">
+        </div>
+        <div class="profile-details">
+            <h2 data-testid="fullName">Adekunle Abisola Mercy</h2>
+            <p data-testid="jobTitle">Frontend Developer</p>
+            <p data-testid="shortBio">A passionate developer with a love for clean UI/UX.</p>
+            <p data-testid="currentLocation">Lagos, Nigeria</p>
+            <p data-testid="emailAddress">adekunleabisolamercy@gmail.com</p>
+            <p data-testid="socialLinks">
+                <a href="http://www.linkedin.com/in/adekunle-abisola" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/Bison-rue/html-game" target="_blank">GitHub</a> | 
+                <a href="https://x.com/AbisolaMer41996?t=N3ltzLnpXHU2pARd02Hv9g&s=09" target="_blank">Twitter</a>
+            </p>
+            <p data-testid="currentTimeUTC">UTC Time: <span id="utc-time"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            document.getElementById("utc-time").textContent = new Date().toUTCString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
